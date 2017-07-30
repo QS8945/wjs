@@ -2,19 +2,19 @@
 
 $screen-md-min:992px;
 $main-text:#8f918f;
+$main-line:#c0c0c0;
 
 /**
  *     公共样式
  * */
 body{
     font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+                color: $main-text;
 }
 /**
  *     头部样式
  * */
 #main_head{
-    height: 200px;
-    background-color: pink;
     .topbar{
         border-bottom: 1px solid #C0C0C0;
         .container > .row>div{
@@ -55,32 +55,212 @@ body{
             margin-left: -60px;
         }
     }
-}
-@media (max-width: $screen-md-min) {
-    #main_head>.topbar{
-        display: none;
+    nav{
+        .container{
+            .navbar-header{
+                color: #e92322;
+                span{
+                    line-height: 80px;
+                    font-size: 45px;
+                    margin-right: 10px;
+                }
+                a{
+                    font-style:italic;
+                    color: #333333;
+                    font-size: 30px;
+                    line-height: 50px;
+                }
+            }
+            .navbar-nav{
+                margin: 0;
+                .active a,a:hover{
+                    background-color: transparent;
+                    border-bottom: 2px solid #e92322;
+                }
+                a{
+                    line-height: 50px;
+                    font-size: 14px;
+                }
+            }
+        }
     }
 }
-//.row>div:nth-child(2){
-//  height: 40px;
-//  background-color: lightblue;
-//}
-//.row>div:nth-child(3){
-//  height: 40px;
-//  background-color: red;
-//}
-//.row>div:nth-child(4){
-//  height: 40px;
-//  background-color: lightcyan;
-//}
 /**
  *     头部样式
  * */
-section:nth-of-type(2n+1){
-    height: 200px;
-    background-color: #f0f0f0;
+#carousel{
+    .carousel-inner{
+        .item{
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+    }
 }
-section:nth-of-type(2n){
+@media (min-width: 768px) {
+    .carousel-inner{
+        .item{
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            height: 410px;
+        }
+    }
+}
+#special{
+    padding: 50px 0;
+    .container{
+        .row{
+            .col-sm-6,.col-md-4{
+                padding: 20px 0;
+                .media{
+                    a{
+                        text-decoration: none;
+                        color: #888;
+                        &:hover{
+                            color: #666;
+                        }
+                        .media-left{
+                            span{
+                                font-size: 34px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+#appointment{
+    border-top: 1px solid $main-line;
+    p{
+        margin-bottom: 0;
+    }
+    .container{
+        padding: 20px 0;
+        color: #333;
+        .spc-warning,.spc-appoint{
+            color: red;
+        }
+        .spc-appoint{
+            border-bottom: 1px dashed red;
+            text-decoration: none;
+        }
+        .spc-video{
+            float: right;
+        }
+    }
+}
+#tab_card{
+    border-top: 1px solid $main-line;
+    padding: 40px 0;
+    background-color: #f0f0f0;
+    .container{
+        .nav-tabs{
+            padding-left: 20px;
+            li{
+                a{
+                    font-size: 16px;
+                    color: #333;
+                    border: none; 
+                    &:hover{
+                    color: #000;
+                        border-color: transparent;
+                    }
+                }
+                &.active{
+                    a{
+                        border-bottom: 4px solid red;
+                        background-color: transparent;
+                        border-radius: 0;
+                    }
+                }
+            }
+        }
+        .tab-content{
+            .col-xs-12{
+                margin-bottom: 20px;
+            }
+            padding: 20px 0;
+            .ticket{
+                overflow: hidden;
+                height: 160px;
+                width: 360px;
+                background-color: red;
+                text-align: center;
+                color: white;
+                box-shadow: 1px 1px 5px #ccc;
+                .tic-header{
+                    border-left: 1px dashed white;
+                    width: 120px;
+                    float: right;
+                    position: relative;
+                    padding: 40px 0;
+                    strong{
+                        font-size: 30px;
+                    }
+                    p{
+                        font-size: 16px;
+                    }
+                    &::after,&::before{
+                        content: "";
+                        height: 16px;
+                        width: 16px;
+                        background-color: #f0f0f0;
+                        border-radius: 8px;
+                        position: absolute;
+                    }
+                    &::after{
+                        top: -8px;
+                        left: -8px;
+                    }
+                    &::before{
+                        top: 152px;
+                        left: -8px;
+                        box-shadow: 0px 4px 1px #ccc inset;
+                    }
+                }
+                .tic-body{
+                    padding: 15px;
+                    height: 160px;
+                    margin-right: 120px;
+                    &::before{
+                        content: "体验";
+                        font-size: 16px;
+                        height: 25px;
+                        line-height: 25px;
+                        width: 90px;
+                        color: red;
+                        background-color: #f0f0f0;
+                        position: absolute;
+                        transform: rotate(-45deg);
+                        left: -9px;
+                        bottom: 127px;
+                        border-radius: 50% 50% 0 0;
+                    }
+                    .row{
+                        .col-style{
+                            p{
+                                margin-bottom: 0;
+                            }
+                            margin-bottom: 10px;
+                        }
+                    }                
+                }
+            }
+            .tic-inverse{
+                background-color: #fff;
+                color: #777;
+            }
+        }
+    }
+}
+section:nth-of-type(5){
+    border-top: 1px solid $main-line;
+    height: 200px;
+    background-color: white;
+}
+section:nth-of-type(6){
     height: 200px;
     background-color: white;
 }
