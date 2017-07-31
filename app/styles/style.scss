@@ -56,6 +56,8 @@ body{
         }
     }
     nav{
+        top: 0;
+        width: 100%;
         .container{
             .navbar-header{
                 color: #e92322;
@@ -69,6 +71,9 @@ body{
                     color: #333333;
                     font-size: 30px;
                     line-height: 50px;
+                }
+                .navbar-toggle{
+                    margin-top: 22px;
                 }
             }
             .navbar-nav{
@@ -111,6 +116,8 @@ body{
     padding: 50px 0;
     .container{
         .row{
+            margin-right: 0;
+            margin-left: 0;
             .col-sm-6,.col-md-4{
                 padding: 20px 0;
                 .media{
@@ -137,7 +144,7 @@ body{
         margin-bottom: 0;
     }
     .container{
-        padding: 20px 0;
+        padding: 20px 20px;
         color: #333;
         .spc-warning,.spc-appoint{
             color: red;
@@ -183,7 +190,6 @@ body{
             }
             padding: 20px 0;
             .ticket{
-                overflow: hidden;
                 height: 160px;
                 width: 360px;
                 background-color: red;
@@ -251,23 +257,137 @@ body{
             .tic-inverse{
                 background-color: #fff;
                 color: #777;
+                .badge-tips{
+                    position: absolute;
+                    background-color: transparent;
+                    width: 100%;
+                    top: 20px;
+                    a{
+                        text-shadow: 1px 1px 2px #8f918f;
+                        padding: 4px;
+                        font-size: 14px;
+                        &:hover{
+                            text-decoration: none;
+                        }
+                    }
+                    .badge-one{
+                        border: 1px solid #e92322;
+                        color: #e92322;
+                    }
+                    .badge-two{
+                        border: 1px solid #399;
+                        color: #399;
+                    }
+                }
             }
         }
     }
 }
-section:nth-of-type(5){
+#news{
     border-top: 1px solid $main-line;
-    height: 200px;
-    background-color: white;
+    padding: 40px 0;
+    .col-sm-offset-3,.col-md-offset-3{
+        p{
+            font-size: 18px;
+            text-align: center;
+            padding: 15px 0;
+            border-bottom: 1px dashed $main-line;
+            position: relative; 
+            &::after{
+                content: "";
+                height: 10px;
+                width: 10px;
+                border-radius: 50%;
+                border: 1px solid $main-line;
+                position: absolute;
+                left: 100%;
+                top: 50px;
+            }
+        }
+    }
+    .col-sm-2,.col-md-1{
+        .nav-stacked{
+            li{
+                span{
+                    padding: 10px 6px;
+                    font-size: 28px;
+                    color: $main-line;
+                }
+                &.active{
+                    span{
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
 }
-section:nth-of-type(6){
-    height: 200px;
-    background-color: white;
+@media (max-width: 768px){
+    #news{
+        .row{
+            .col-sm-2,.col-md-1{
+                padding-bottom: 10px;
+                padding-top: 10px;
+                .nav-stacked{
+                    text-align: center;
+                    li{
+                        //float: left;
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+    #cooperation{
+        .container{
+            ul{
+                padding-left: 0; 
+                li:nth-child(3n){
+                    a{
+                        border-right: none;
+                    }
+                }
+            }
+        }
+    }
+} 
+
+#cooperation{
+    border-top: 1px solid $main-line;
+    padding: 40px 0;
+    .container{
+        h3{
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        ul{
+            text-align: center;
+            li{
+                display: inline-block;
+                &:last-child{
+                    a{
+                        border-right: none;
+                    }
+                }
+                a{
+                    color: $main-text;
+                    font-size: 50px;
+                    border-right: 1px dashed $main-line;
+                    line-height: 50px;
+                    padding: 10px 25px;
+                    &:hover{
+                        color: red;
+                    }
+                }
+                list-style-type: none;
+            }
+        }
+    }
 }
 /**
  *     底部样式
  * */
 #main_foot{
     height: 200px;
-    background-color: deepskyblue;
+    background-color: transparent;
 }
