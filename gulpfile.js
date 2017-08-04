@@ -11,24 +11,24 @@ const sass = require('gulp-sass');
 
 gulp.task('style',()=>{
     //执行任务
-    gulp.src(['./app/styles/*.scss','!./app/styles/_demo.scss'])
+    return gulp.src(['./app/styles/*.scss','!./app/styles/_demo.scss'])
         .pipe(sass()).pipe(cssnano()).pipe(gulp.dest('./dist/styles'))
         .pipe(browserSync.reload({stream:true}));
 });
 gulp.task('script',()=>{
-    gulp.src('./app/scripts/*.js')
+    return gulp.src('./app/scripts/*.js')
         .pipe(concat('main.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./dist/scripts'))
         .pipe(browserSync.reload({stream:true}));
 });
 gulp.task('image',()=>{
-    gulp.src('./app/images/*.{jpg,png}')
+    return gulp.src('./app/images/*.{jpg,png}')
         .pipe(gulp.dest('./dist/images'))
         .pipe(browserSync.reload({stream:true}));
 });
 gulp.task('html',()=>{
-    gulp.src('./app/index.html')
+    return gulp.src('./app/index.html')
         .pipe(htmlmin({collapseWhitespace:true}))
         .pipe(gulp.dest('./dist'))
         .pipe(browserSync.reload({stream:true}));
@@ -45,3 +45,4 @@ gulp.task('run',()=>{
     gulp.watch('./app/images/*.{png,jpg}',['image']);
     gulp.watch('./app/index.html',['html']);
 });
+gulp.task('dev', ['style', 'script', 'image', 'html', 'run']);

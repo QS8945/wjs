@@ -17,42 +17,46 @@ body{
 #main_head{
     .topbar{
         border-bottom: 1px solid #C0C0C0;
-        .container > .row>div{
-            height: 40px;
-            line-height: 40px;
-            border-right: 1px solid #C0C0C0;
-            text-align: center;
-            font-size: 12px;
-            color: $main-text;
-            span{
-                color: #888888;
-            }
-            a{
-                text-decoration: none;
-                color: $main-text;
-            }
-            &:last-child{
-                .btn-danger{
-                    background-color: #e92322;
-                    color: white;
+        .container{
+            .row{
+                div{
+                    height: 40px;
+                    line-height: 40px;
+                    border-right: 1px solid #C0C0C0;
+                    text-align: center;
+                    font-size: 12px;
+                    color: $main-text;
+                    span{
+                        color: #888888;
+                    }
+                    a{
+                        text-decoration: none;
+                        color: $main-text;
+                    }
+                    &:last-child{
+                        .btn-danger{
+                            background-color: #e92322;
+                            color: white;
+                        }
+                        border-right: none;
+                    }
+                    &:nth-child(1)::after{
+                        width: 120px;
+                        height: 136px;
+                        content: url(../images/c_06.jpg);
+                        display: none;
+                        position: absolute;
+                        left: 50%;
+                        margin-left: -60px;
+                        z-index: 1001;
+                    }
+                    &:hover{
+                        &::after{
+                            display: block;
+                        }
+                    }
                 }
-                border-right: none;
             }
-        }
-        .container > .row>div:nth-child(1):hover{
-            &::after{
-                display: block;
-            }
-        }
-        .container > .row>div:nth-child(1)::after{
-            content: "";
-            width: 120px;
-            height: 136px;
-            content: url(../images/c_06.jpg);
-            display: none;
-            position: absolute;
-            left: 50%;
-            margin-left: -60px;
         }
     }
     nav{
